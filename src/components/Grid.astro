@@ -2,6 +2,7 @@
 import Design from "./Design.astro";
 import TextChange from "../components/TextChange.astro";
 import Date from "./Date.astro";
+import BLCard from "./BLCard.astro";
 ---
 
 <div class="container">
@@ -11,7 +12,7 @@ import Date from "./Date.astro";
       <TextChange />
     </div>
     <div class="items row-1">
-      <Design />
+      <!-- <Design /> -->
     </div>
     <div class="items row-1"></div>
   </div>
@@ -32,7 +33,7 @@ import Date from "./Date.astro";
   <!-- row-3 -->
   <div class="row">
     <div class="items row-1"></div>
-    <div class="row3-item-down"></div>
+    <div class="row3-item-down"><BLCard/></div>
   </div>
 </div>
 
@@ -117,6 +118,7 @@ import Date from "./Date.astro";
     border-radius: 10px;
     padding: 10px;
     height: 35%;
+    overflow: hidden;
   }
   marquee {
     font-weight: 700;
