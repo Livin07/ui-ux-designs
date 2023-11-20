@@ -3,29 +3,30 @@ import Design from "./Design.astro";
 import TextChange from "../components/TextChange.astro";
 import Date from "./Date.astro";
 import BLCard from "./BLCard.astro";
+import IconPair from "./IconPair.astro";
 ---
 
-<div class='container'>
+<div class="container">
   <!-- row one -->
-  <div class='row'>
-    <div class='items row-1-top'>
+  <div class="row">
+    <div class="items row-1-top">
       <TextChange />
     </div>
-    <div class='items row-1'>
+    <div class="items row-1">
       <Design />
     </div>
-    <div class='items row-1'></div>
+    <div class="items row-1"></div>
   </div>
   <!-- row-2 -->
-  <div class='row'>
-    <div class='row-2-top'>
-      <div class='row2-item'></div>
-      <div class='row2-item'><Date /></div>
+  <div class="row">
+    <div class="row-2-top">
+      <div class="row2-item"><IconPair /></div>
+      <div class="row2-item"><Date /></div>
     </div>
-    <div class='items row-1'></div>
-    <div class='row-2-bottom'>
-      <div class='row2-item-down'></div>
-      <div class='row2-item-down2'>
+    <div class="items row-1"></div>
+    <div class="row-2-bottom">
+      <div class="row2-item-down"></div>
+      <div class="row2-item-down2">
         <marquee>TODAY IS A BUSY NEWS DAY</marquee>
       </div>
     </div>
@@ -33,7 +34,7 @@ import BLCard from "./BLCard.astro";
   <!-- row-3 -->
   <div class="row">
     <div class="items row-1"></div>
-    <div class="row3-item-down"><BLCard/></div>
+    <div class="row3-item-down"><BLCard /></div>
   </div>
 </div>
 
@@ -92,6 +93,7 @@ import BLCard from "./BLCard.astro";
     border-radius: 10px;
     padding: 10px;
     flex: 1;
+    width: 50%;
   }
   .row-2-bottom {
     display: flex;
