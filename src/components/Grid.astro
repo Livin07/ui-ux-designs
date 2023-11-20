@@ -21,10 +21,12 @@ import Date from "./Date.astro";
       <div class="row2-item"></div>
       <div class="row2-item"><Date /></div>
     </div>
-    <div class="items row-1"></div>
-    <div class="row-2-bottom">
-      <div class="row2-item-down"></div>
-      <div class="row2-item-down2"></div>
+    <div class='items row-1'></div>
+    <div class='row-2-bottom'>
+      <div class='row2-item-down'></div>
+      <div class='row2-item-down2'>
+        <marquee>TODAY IS A BUSY NEWS DAY</marquee>
+      </div>
     </div>
   </div>
   <!-- row-3 -->
@@ -96,7 +98,7 @@ import Date from "./Date.astro";
     gap: 1rem;
   }
   .row2-item-down {
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(72, 237, 72);
     border-radius: 10px;
     padding: 10px;
     width: 25%;
@@ -106,12 +108,20 @@ import Date from "./Date.astro";
     border-radius: 10px;
     padding: 10px;
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .row3-item-down {
     background-color: rgb(230, 230, 230);
     border-radius: 10px;
     padding: 10px;
     height: 35%;
+  }
+  marquee {
+    font-weight: 700;
+    font-size: 28px;
+    color: rgb(90, 89, 89);
   }
   @media only screen and (max-width: 600px) {
     .container {
