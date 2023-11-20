@@ -1,0 +1,232 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Image1 from "../assets/Image1.jpg";
+import Image2 from "../assets/Image2.jpg";
+import Image3 from "../assets/Image3.jpeg";
+import Image4 from "../assets/Image4.jpg";
+import Image5 from "../assets/Image5.jpeg";
+import Image6 from "../assets/Image6.jpeg";
+import BG from '../assets/bg.jpg'
+import BG2 from '../assets/bg-2.jpg'
+---
+
+<Layout title='Welcome to Astro.'>
+  <div class='container'>
+     <div class="overlay-content">
+      <div class="title"><h1>STUDIO <span >CREATIVE</span> </h1></div>
+      
+      <div class="description">
+        <div class="client">
+          <h2>The Client</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis unde facilis non? Nemo quas quidem in vitae, dignissimos magni! Est tempore ex rerum dicta amet fuga incidunt fugit qui repellendus placeat iste provident aperiam molestias, aspernatur officiis obcaecati magnam ad repellat reiciendis! Quod voluptas architecto iusto ad enim doloremque vero magni accusantium, laudantium eaque, quos asperiores, nisi nesciunt veritatis cupiditate laborum. Illo architecto omnis impedit voluptate exercitationem culpa dolorum pariatur, laudantium fuga rem </p>
+        </div>
+        <div class="contri">
+          <h2>The Contributor</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eveniet sed mollitia adipisci odit dolorem alias, nobis, repellendus, veniam consequatur tempore nemo est perferendis illo corrupti quaerat? Ratione repudiandae officia officiis cupiditate! Tempore nihil laborum, omnis iste iure sit debitis libero mollitia sint autem ipsam fugiat excepturi esse exercitationem velit ea, modi enim assumenda ratione earum sunt rem. Blanditiis unde, dolorum quaerat optio architecto, soluta iste rem voluptates placeat ad praesentium perferendis, libero eos qui </p>
+        </div>
+      </div>
+     </div>
+    
+  </div>
+
+  <div class='hero'></div>
+  <div class='video'  id="video" >
+    <div class='section-text' style="color: white;">
+      <h1 id="red">VIDEOREEL</h1>
+      <p>Aug 2022 - 2023</p>
+    </div>
+    <div class='section-video' id="videoScroll" >
+      <div class='image-container'><iframe width="100%" height="550" src="https://www.youtube.com/embed/jnUZxlhkdI4?si=-rjQCNca8Kl-WfT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <div class='image-container'><iframe width="100%" height="550" src="https://www.youtube.com/embed/jnUZxlhkdI4?si=-rjQCNca8Kl-WfT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <div class='image-container'><iframe width="100%" height="550" src="https://www.youtube.com/embed/jnUZxlhkdI4?si=-rjQCNca8Kl-WfT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <div class='image-container'><iframe width="100%" height="550" src="https://www.youtube.com/embed/jnUZxlhkdI4?si=-rjQCNca8Kl-WfT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+     
+    </div>
+  </div>
+	<div class='section-bg'></div>
+	<div class='section-bg2'></div>
+
+ 
+	<div class='branding' id="branding" >
+    <div class='section-text'>
+      <h1>Branding</h1>
+      <p>UI&UX</p>
+    </div>
+    <div class='section-img' >
+      <div class='image-container'><Image src={Image1} alt='' /></div>
+      <div class='image-container'><Image src={Image2} alt='' /></div>
+      <div class='image-container'><Image src={Image3} alt='' /></div>
+      <div class='image-container'><Image src={Image4} alt='' /></div>
+      <div class='image-container'><Image src={Image5} alt='' /></div>
+      <div class='image-container'><Image src={Image6} alt='' /></div>
+    </div>
+  </div>
+
+	<div class='section-last'></div>
+	<div class='footer'></div>
+
+</Layout>
+
+<style>
+
+
+
+  .container {
+    height: 100vh;
+    width: 100%;
+    background-color: #141312;
+  }
+
+  .hero {
+    background-attachment: fixed;
+    background-image: url(../assets/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .section-bg {
+    background-attachment: fixed;
+    background-image: url(../assets/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .section-bg2 {
+    background-attachment: fixed;
+    background-image: url(../assets/bg-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .section-last {
+    background-attachment: fixed;
+    background-image: url(../assets/end-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .branding {
+    width: 100%;
+    display: flex;
+    align-items: center;
+		
+  }
+  .video{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #141312;
+
+  }
+  .section-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 400px;
+    height: 100vh;
+	
+  }
+  .section-img {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+		padding: 2rem 0;
+  }
+
+  .section-video{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+		padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+  }
+  .image-container {
+    height: auto;
+    width: 1000px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay-content{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+    color: aliceblue;
+   
+  }
+  .title{
+    padding: 6rem 0;
+  }
+  .description {
+    display: flex;
+    width: 100%;
+   
+    gap: 2rem;
+  }
+  .client{
+    flex: 1;
+  }
+  .contri{
+    flex: 1;
+  }
+  .contri p {
+    line-height: 26px;
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .client p {
+    line-height: 26px;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 0 2rem 0 0;
+  }
+ 
+  h2{
+    padding: 2rem 0;
+    font-size: 28px;
+    font-weight: 300;
+  }
+  span{
+    font-family: 'Yeseva One', serif;
+    letter-spacing: 6px;
+  }
+  .footer {
+    background-color: #141312;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+ 
+
+</style>
+
+<script is:inline>
+  import { gsap } from "gsap";
+    
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    
+    gsap.to("#red", {
+  scrollTrigger: "#red", // start the animation when ".box" enters the viewport (once)
+  x: 500,
+});
+</script>
+<script is:inline>
+
+
+  
+</script>

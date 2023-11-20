@@ -1,0 +1,34 @@
+<div>
+  <p id='textSwitcher'>today.<span>design</span></p>
+</div>
+
+<style>
+  span {
+    color: grey;
+    display: inline-block;
+    transform: translateY(-150%);
+    transition: transform 0.5s ease-in-out;
+  }
+  p {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .slide-up {
+    transform: translateY(0);
+  }
+</style>
+
+<script is:inline>
+  setInterval(function () {
+    var spanElement = document.querySelector("#textSwitcher span");
+    spanElement.classList.toggle("slide-up");
+    if (spanElement.classList.contains("slide-up")) {
+      if (spanElement.innerText === "design") {
+        spanElement.innerText = "worlds";
+      } else {
+        spanElement.innerText = "design";
+      }
+    }
+  }, 2000);
+</script>

@@ -1,0 +1,71 @@
+---
+
+---
+
+<style>
+  .container {
+    max-width: 100%;
+    height: 100%;
+  }
+  .img-slide {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(230, 227, 227);
+    border-radius: 10px;
+  }
+
+  .background-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    animation: fadeInOut 2s infinite;
+  }
+
+  @keyframes fadeInOut {
+    0%,
+    100% {
+      opacity: 0;
+      /* transform: scale(0); */
+      transform: translateY(100%);
+    }
+
+    50% {
+      opacity: 1;
+      /* transform: scale(1); */
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<div class='container'>
+  <div class='img-slide'>
+    <div class='background-container' id='backgroundContainer'></div>
+  </div>
+</div>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backgroundContainer = document.getElementById("backgroundContainer");
+    const images = [
+      "src/assets/img1 (1).jpg",
+      "src/assets/img1 (2).jpg",
+      "src/assets/img1 (3).jpg",
+      "src/assets/img1 (4).jpg",
+    ];
+    let currentImageIndex = 0;
+
+    function changeBackground() {
+      const nextImageIndex = (currentImageIndex + 1) % images.length;
+
+      backgroundContainer.style.backgroundImage = `url('${images[nextImageIndex]}')`;
+
+      currentImageIndex = nextImageIndex;
+
+      setTimeout(changeBackground, 1500);
+    }
+
+    changeBackground();
+  });
+</script>
