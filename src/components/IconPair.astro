@@ -8,8 +8,8 @@ import bgicon from "../assets/bgicon.png";
     <div class="static-icon"><Image src={bgicon} alt="" /></div>
   </div>
   <div class="icon-container">
-    <div class="dynamic-icon">
-      <img id="dynamic-icon" src="../assets/bgicon.jpg" alt="" />
+    <div class="dynamic-icon" id="dynamic-icon">
+      <Image src={bgicon} alt="" />
     </div>
   </div>
 </div>
@@ -22,6 +22,7 @@ import bgicon from "../assets/bgicon.png";
     justify-content: center;
   }
   .icon-container {
+    overflow: hidden;
   }
   .static-icon {
     height: 80%;
@@ -37,30 +38,70 @@ import bgicon from "../assets/bgicon.png";
     height: 80%;
     flex: 1;
     margin: 10px;
+    animation: slide-down 3s linear infinite;
   }
   .dynamic-icon > img {
     height: 100%;
     width: 100%;
-    animation: rotate 5s linear infinite;
+  }
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-200%) rotate(-90deg);
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(-200%) rotate(-90deg);
+      opacity: 0;
+    }
+    40% {
+      transform: translateY(0%) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(0%) rotate(0deg);
+
+    }
+    60% {
+      transform: translateY(0%) rotate(0deg);
+      opacity: 1;
+    }
+    90% {
+      transform: translateY(200%) rotate(90deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(200%) rotate(90deg);
+      opacity: 0;
+    }
   }
 </style>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
     const dynamicContainer = document.getElementById("dynamic-icon");
-    const images = [
-      "../assets/bgicon.jpg",
-      "../assets/bgicon.jpg",
-      "../assets/bgicon.jpg",
-    ];
-    let currentImageIndex = 0;
-
+    // const images = [
+    //   bgicon,
+    //   bgicon,
+    //   bgicon,
+    // ];
+    // let currentImageIndex = 0;
+    let flag = 0;
+    var maximum = 0;
     function changeBackground() {
-      const nextImageIndex = (currentImageIndex + 1) % images.length;
-
-      dynamicContainer.src = images[nextImageIndex];
-      currentImageIndex = nextImageIndex;
-      setTimeout(changeBackground, 1500);
+      var style = window.getComputedStyle(dynamicContainer);
+      var matrix = new WebKitCSSMatrix(style.transform);
+      if (flag === 0) {
+        if (matrix.m42 === -maximum && matrix.m42 !== 0) {
+          flag = 1;
+        }
+        maximum = Math.max(matrix.m42, maximum);
+      } else {
+        if (matrix.m42 === maximum) {
+          console.log("changing background", maximum);
+          // write code to change image here
+        }
+      }
+      setTimeout(changeBackground, 1);
     }
 
     changeBackground();
