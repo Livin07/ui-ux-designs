@@ -16,23 +16,28 @@ import bgicon from "../assets/bgicon.png";
 
 <style>
   .container {
-    height: 100%;
+    height: 45px;
     width: 100%;
     display: flex;
     justify-content: center;
+    /* overflow: hidden; */
   }
-  .icon-container {
+  /* .icon-container {
     overflow: hidden;
-  }
+  } */
   .static-icon {
     height: 80%;
     flex: 1;
+    aspect-ratio: 1;
     margin: 10px;
     opacity: 0.5;
+    
   }
   .static-icon > img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
+
   }
   .dynamic-icon {
     height: 80%;
@@ -43,6 +48,7 @@ import bgicon from "../assets/bgicon.png";
   .dynamic-icon > img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
   @keyframes slide-down {
     0% {

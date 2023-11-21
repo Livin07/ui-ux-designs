@@ -24,7 +24,7 @@ import ScrollImage from "./ScrollImage.astro";
   <!-- row-2 -->
   <div class='row'>
     <div class='row-2-top'>
-      <div class='row2-item'><IconPair /></div>
+      <div class='row2-item icon-container'><IconPair /></div>
       <div class='row2-item'><Date /></div>
     </div>
     <div class='items row-1'>
@@ -64,6 +64,12 @@ import ScrollImage from "./ScrollImage.astro";
     100% {
       transform: translateX(100%);
     }
+  }
+  .icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
   .row {
     width: 300px;
