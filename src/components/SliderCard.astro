@@ -30,6 +30,7 @@ import Img4 from "../assets/img1 (4).jpg";
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: slide 3s ease-in-out infinite;
   }
   .image-container {
     height: 250px;
@@ -41,7 +42,27 @@ import Img4 from "../assets/img1 (4).jpg";
     height: 100%;
     width: 100%;
   }
-
+  @keyframes slide {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.3;
+    }
+    40% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+    60% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
   .content {
     padding: 1.5rem 0;
     font-size: 22px;
