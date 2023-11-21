@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import bgicon from "../assets/bgicon.png";
+---
+
+<div class="container">
+  <div class="icon-container">
+    <div class="static-icon"><Image src={bgicon} alt="" /></div>
+  </div>
+  <div class="icon-container">
+    <div class="dynamic-icon">
+      <img id="dynamic-icon" src="../assets/bgicon.jpg" alt="" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .icon-container {
+  }
+  .static-icon {
+    height: 80%;
+    flex: 1;
+    margin: 10px;
+    opacity: 0.5;
+  }
+  .static-icon > img {
+    height: 100%;
+    width: 100%;
+  }
+  .dynamic-icon {
+    height: 80%;
+    flex: 1;
+    margin: 10px;
+  }
+  .dynamic-icon > img {
+    height: 100%;
+    width: 100%;
+    animation: rotate 5s linear infinite;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dynamicContainer = document.getElementById("dynamic-icon");
+    const images = [
+      "../assets/bgicon.jpg",
+      "../assets/bgicon.jpg",
+      "../assets/bgicon.jpg",
+    ];
+    let currentImageIndex = 0;
+
+    function changeBackground() {
+      const nextImageIndex = (currentImageIndex + 1) % images.length;
+
+      dynamicContainer.src = images[nextImageIndex];
+      currentImageIndex = nextImageIndex;
+      setTimeout(changeBackground, 1500);
+    }
+
+    changeBackground();
+  });
+</script>
